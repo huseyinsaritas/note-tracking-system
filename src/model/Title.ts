@@ -1,7 +1,7 @@
 enum Title {
-  Prof = "Professor",
+  Prof = "Profesör",
   Doc = "Doçent",
-  Stj = "Stajer",
+  Stj = "Stajyer",
 }
 
 export default Title;
