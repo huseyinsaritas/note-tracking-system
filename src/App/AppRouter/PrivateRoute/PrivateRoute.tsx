@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Route, Redirect, RouteProps } from "react-router-dom";
-import ICombinedState from "../../../redux/model/ICombinedState";
+import IUserState from "../../../redux/model/IUserState";
 import { LOGIN } from "../../constants/ROUTER_PATH_TITLE";
 
 interface PrivateRouteProps extends RouteProps {
@@ -9,7 +9,7 @@ interface PrivateRouteProps extends RouteProps {
 }
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ component: Component, ...rest }) => {
-  const isLoggedIn = useSelector((state: ICombinedState) => state.user.isLoggedIn);
+  const isLoggedIn = useSelector((state: IUserState) => state.isLoggedIn);
 
   return (
     <Route
