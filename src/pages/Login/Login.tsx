@@ -33,8 +33,6 @@ const Login = () => {
     setTempUserState(newTempUserState);
   };
 
-  console.log(user);
-
   const onLogin = () => {
     let findUser = students.find((student) => student.email === tempUserState.email && student.password === tempUserState.password);
     if (findUser) {
