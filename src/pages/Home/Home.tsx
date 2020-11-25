@@ -5,7 +5,7 @@ import HomeStudent from "./HomeStudent";
 import HomeTeacher from "./HomeTeacher";
 
 const Home = () => {
-  const { user, isLoggedIn } = useSelector((state: IUserState) => ({
+  const { isLoggedIn } = useSelector((state: IUserState) => ({
     user: state.user,
     isLoggedIn: state.isLoggedIn,
   }));
@@ -15,7 +15,6 @@ const Home = () => {
   } else if (isLoggedIn === "TEACHER") {
     return <HomeTeacher />;
   }
-  return <div>Welcome {user.username}</div>;
 };
 
 export default Home;
