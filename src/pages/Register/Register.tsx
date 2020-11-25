@@ -59,7 +59,13 @@ const Register = () => {
         <select name="titles" id="titles">
           {titleOptions.map((title) => {
             return (
-              <option key={title.value} value={title.label}>
+              <option
+                key={title.value}
+                value={title.label}
+                onChange={(event) => {
+                  setTeacherTitle(event.target.value);
+                }}
+              >
                 {title.value}
               </option>
             );
