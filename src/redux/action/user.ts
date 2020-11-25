@@ -29,7 +29,7 @@ export const deleteStudent = (email: string): IAction => ({
   payload: email,
 });
 
-// export const updateStudent = (clas: string): IAction => ({
-//   type: USER_ACTIONS.UPDATE_STUDENT,
-//   payload: clas,
-// });
+export const updateStudent = (email: string, clas?: string, ects?: string): IAction => ({
+  type: USER_ACTIONS.UPDATE_STUDENT,
+  payload: { email, class: clas, ects },
+});

@@ -46,6 +46,18 @@ const userReducer: Reducer<IUserState, IAction> = (state: IUserState = initialUs
         ...state,
         students: studentList,
       };
+
+    case USER_ACTIONS.UPDATE_STUDENT:
+      const studentIndex = state.students.findIndex((student) => student.email === action.payload.email);
+      let studentListt = state.students;
+      if (studentIndex > -1) {
+        studentListt[studentIndex].class = action.payload.class;
+        studentListt[studentIndex].ects = action.payload.ects;
+      }
+      return {
+        ...state,
+        students: studentListt,
+      };
   }
   return initialUserState;
 };
