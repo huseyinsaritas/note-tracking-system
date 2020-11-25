@@ -56,7 +56,16 @@ const Login = () => {
       <div>Login</div>
       <input type="email" name="email" value={tempUserState?.email || ""} onChange={inputOnchange} />
       <input type="password" name="password" value={tempUserState?.password || ""} onChange={inputOnchange} />
-      <button onClick={onLogin}>Login</button>
+      <div>
+        <button onClick={onLogin}>Login</button>
+        <button
+          onClick={() => {
+            history.replace("/register");
+          }}
+        >
+          Register
+        </button>
+      </div>
     </div>
   );
 };
