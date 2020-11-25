@@ -28,7 +28,6 @@ const Register = () => {
   };
 
   const titleOptions = Object.entries(Title).map(([key, value]) => ({ label: key, value }));
-  // console.log(titleOptions);
 
   let content;
   if (profession === "") {
@@ -91,7 +90,6 @@ const Register = () => {
       <button
         onClick={() => {
           dispatch(changeUser(tempUserState));
-          // console.log("tempUserState", tempUserState);
           if (profession === "student") {
             dispatch(saveStudent({ ...tempUserState, ects: 0, class: studentClass }));
           } else if (profession === "teacher") {
