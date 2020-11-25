@@ -3,26 +3,30 @@ import { useSelector } from "react-redux";
 import IUserState from "../../redux/model/IUserState";
 
 const HomeStudent = () => {
-  const { students } = useSelector((state: IUserState) => ({
+  const { user, students } = useSelector((state: IUserState) => ({
     students: state.students,
+    user: state.user,
   }));
 
   return (
-    <ol>
-      {students
-        .sort((a, b) => {
-          if (a.ects > b.ects) return -1;
-          if (a.ects < b.ects) return 1;
-          return 0;
-        })
-        .map((student) => {
-          return (
-            <li>
-              {student.username} - {student.ects}
-            </li>
-          );
-        })}
-    </ol>
+    <>
+      <div>Welcome {user.username}</div>
+      <ol>
+        {students
+          .sort((a, b) => {
+            if (a.ects > b.ects) return -1;
+            if (a.ects < b.ects) return 1;
+            return 0;
+          })
+          .map((student) => {
+            return (
+              <li>
+                {student.username} - {student.ects}
+              </li>
+            );
+          })}
+      </ol>
+    </>
   );
 };
 
